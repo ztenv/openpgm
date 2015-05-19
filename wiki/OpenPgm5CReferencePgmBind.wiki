@@ -3,27 +3,27 @@
 #sidebar TOC5CReferenceSocket
 _Function_
 === Declaration ===
-<pre>
+<code>
 #include <pgm/pgm.h>
 
-bool *pgm_bind* (
-	[OpenPgm5CReferencePgmSockT pgm_sock_t]`*`                        restrict sock,
-	const struct [OpenPgm5CReferencePgmSockAddrT pgm_sockaddr_t]`*` const restrict sockaddr,
+bool pgm_bind (
+	pgm_sock_t`*`                        restrict sock,
+	const struct pgm_sockaddr_t`*` const restrict sockaddr,
 	const socklen_t                             sockaddrlen,
-	[OpenPgm5CReferencePgmErrorT pgm_error_t]`*``*`                      restrict error
+	pgm_error_t`*``*`                      restrict error
 	);
 
-bool *pgm_bind3* (
-	[OpenPgm5CReferencePgmSockT pgm_sock_t]`*`                        restrict sock,
-	const struct [OpenPgm5CReferencePgmSockAddrT pgm_sockaddr_t]`*` const restrict sockaddr,
+bool pgm_bind3 (
+	pgm_sock_t`*`                        restrict sock,
+	const struct pgm_sockaddr_t`*` const restrict sockaddr,
 	const socklen_t                             sockaddrlen,
-	const struct group_req`*`            restrict send_req,
+	const struct pgm_interface_req_t`*`  restrict send_req,
 	const socklen_t                             send_req_len,
-	const struct group_req`*`            restrict recv_req,
+	const struct pgm_interface_req_t`*`  restrict recv_req,
 	const socklen_t                             recv_req_len,
-	[OpenPgm5CReferencePgmErrorT pgm_error_t]`*``*`                      restrict error
+	pgm_error_t`*``*`                      restrict error
 	);
-</pre>
+</code>
 
 === Purpose ===
 Bind a transport to the specified network devices.
